@@ -1,6 +1,6 @@
 const config = {
   urls : {
-    devUrl: 'https://startertheme.local',
+    devUrl: 'https://kellomuseo.local',
     devHost : 'localhost',
     devPort: 3000,
   },
