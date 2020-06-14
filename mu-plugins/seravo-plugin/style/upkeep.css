@@ -1,0 +1,224 @@
+#dashboard_right_now .seravo-updates-postbox,
+#dashboard_quick_press .seravo-updates-postbox {
+  padding: 30px 60px 60px 60px;
+  text-align: center;
+}
+
+.js .widget .widget-top, .js .postbox .hndle {
+  cursor: pointer;
+}
+
+.allow_updates_checkbox {
+  padding-bottom: 10px;
+}
+
+.technical_contacts_buttons {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.email-button {
+  margin-bottom: 5px!important;
+}
+
+.dashicons {
+  line-height: 1.4;
+}
+
+form[name="seravo_updates_form"] > .technical_contacts_error {
+  display: none;
+}
+
+form[name="seravo_updates_form"].has-errors > .technical_contacts_error {
+  background: #c51244;
+  border-radius: 0;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  color: white;
+  display: block;
+  margin-top: 10px;
+  margin: auto;
+  max-width: 280px;
+  padding: 10px;
+  position: relative;
+}
+
+form[name="seravo_updates_form"].has-errors > .technical_contacts_error::before {
+  border-bottom: 10px solid #c51244;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  content: '';
+  height: 0;
+  position: absolute;
+  top: -10px;
+  width: 0;
+}
+
+form[name="seravo_updates_form"].has-errors > .technical_contacts_error::after {
+  background: #fff0f4;
+  color: #c51244;
+}
+
+form[name="seravo_updates_form"].has-errors > .technical_contacts_input {
+  background: #fff0f4;
+  border: 1px solid #c51244;
+  color: #eb819f;
+}
+
+.ba-slider {
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.ba-slider img {
+  display:block;
+  max-width:none;
+  width: 100%;
+}
+
+.ba-slider .ba-resize {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top:0;
+  width: 50%;
+}
+
+.ba-slider .ba-handle { /* Thin line seperator */
+  background: rgba(0,0,0,.5);
+  bottom:0;
+  cursor: ew-resize;
+  left:50%;
+  margin-left:-2px;
+  position:absolute;
+  top:0;
+  width:4px;
+}
+
+.ba-slider.difference .ba-handle:after {  /* Big orange knob  */
+  background: #ffb800; /* @orange */
+  border:1px solid #e6a600; /* darken(@orange, 5%) */
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.3),
+    inset 0 2px 0 rgba(255,255,255,.5),
+    inset 0 60px 50px -30px #ffd466; /* lighten(@orange, 20%)*/
+}
+
+.ba-slider .ba-handle:after  {  /* Big knob  */
+  background: #404040; /* @gray */
+  border-radius: 50%;
+  border:1px solid #383838; /* darken(@gray ) */
+  color:white;
+  content:'\21d4';
+  font-size:36px;
+  font-weight:bold;
+  height: 64px;
+  line-height:64px;
+  margin: -32px 0 0 -32px;
+  position: absolute;
+  text-align:center;
+  top: 50%;
+  transition:all 0.3s ease;
+  width: 64px;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.3),
+    inset 0 2px 0 rgba(255,255,255,.5),
+    inset 0 60px 50px -30px #808080; /* lighten(@gray, 20%)*/
+}
+
+.ba-slider .ba-handle.ba-draggable:after {
+  font-size:30px;
+  height: 48px;
+  line-height:50px;
+  margin: -24px 0 0 -24px;
+  width: 48px;
+}
+
+.ba-text-block {
+  padding-left: 20px;
+  padding-right: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#seravo-postbox-site-status ul {
+  list-style-type: disc;
+  padding-left: 18px;
+}
+
+.seravo-test-result-wrapper, .seravo-test-legacy-result-wrapper {
+  -moz-transition: border 1s ease-in;
+  -o-transition: border 1s ease-in;
+  -webkit-transition: border 1s ease-in;
+  background-color: white;
+  border-left: solid 0.5em #e8ba1b;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.12);
+  display: block;
+  margin-top: 2em;
+  max-width: 55em;
+  min-height: 5em;
+  overflow: hidden;
+  transition: border 1s ease-in;
+}
+
+.seravo-test-result, .seravo-test-legacy-result {
+  box-shadow: 0 1px 1px 1px rgba(0,0,0,0.2);
+  display: none;
+  margin: 1em;
+  max-height: 25em;
+  overflow: auto;
+  padding: 1em;
+}
+
+.seravo-test-status, .seravo-test-legacy-status {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 1.6em;
+  margin-left: 0.5em;
+  padding-bottom: 7px;
+  text-align: center;
+}
+
+/* @TODO: Use classes here, not ID selectors, as we can have many similar elements */
+#seravo_test_show_more_wrapper {
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  float: right;
+  height: 1em;
+  margin-right: 0.5em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* @TODO: Use classes here, not ID selectors, as we can have many similar elements */
+#seravo_test_show_more,
+#seravo_test_show_more:hover,
+#seravo_test_show_more:active,
+#seravo_test_show_more:focus {
+  box-shadow: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* @TODO: Use classes here, not ID selectors, as we can have many similar elements */
+#seravo_tests_loading {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media only screen and (max-width:1445px) {
+  #dashboard_right_now .seravo-updates-postbox,
+  #dashboard_quick_press .seravo-updates-postbox{
+    padding: 10px 20px 20px 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .technical_contacts_input {
+    max-width: 200px;
+  }
+}

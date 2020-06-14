@@ -1,0 +1,40 @@
+language: php
+os: linux
+
+php:
+  - '5.6'
+  - '7.0'
+  - '7.2'
+  - '7.4'
+  - 'nightly'
+
+jobs:
+  include:
+    # Latest stable PHP version to run the sniffs against
+    - php: '7.3'
+      env: SNIFF=1
+    # Next PHP version with latest version of all sniffs for early detection of things that deprecate
+    - php: '7.4'
+      env: SNIFF=1 PHPCS_VERSION=master WP_SNIFFS_VERSION=master SECURITY_SNIFFS_VERSION=master PHP_COMPAT_SNIFFS_VERSION=master
+    - name: Gnitpick
+      language: python
+      services: # none
+      install:
+      - curl -O https://raw.githubusercontent.com/Seravo/gnitpick/master/gnitpick.py
+      script:
+      - python3 ./gnitpick.py
+  allow_failures:
+    - php: nightly
+    - env: SNIFF=1 PHPCS_VERSION=master WP_SNIFFS_VERSION=master SECURITY_SNIFFS_VERSION=master PHP_COMPAT_SNIFFS_VERSION=master
+
+install:
+  # Install PHP CodeSniffer, WP Coding Standards and PHPCS Security Audit
+  - if [ -n "$SNIFF" ]; then scripts/install-phpcs.sh; fi
+
+script:
+  # Syntax check all PHP files and fail for any error text in STDERR
+  - '! find . -type f -name "*.php" -exec php -d error_reporting=32767 -l {} \; 2>&1 >&- | grep "^"'
+  # Style and security check using PHP CheckSniffer
+  - if [ -n "$SNIFF" ]; then $HOME/.local/bin/phpcs -i; $HOME/.local/bin/phpcs -ns; fi
+  # Run code and test functionality
+  #- phpunit --verbose # @TODO: Write PHP unit tests

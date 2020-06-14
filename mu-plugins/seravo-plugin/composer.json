@@ -1,0 +1,28 @@
+{
+  "name": "seravo/seravo-plugin",
+  "type": "wordpress-muplugin",
+  "license": "GPL-3.0-or-later",
+  "description": "Enhances WordPress with Seravo.com specific features and integrations",
+  "homepage": "http://seravo.com",
+  "authors": [
+    {
+      "name": "Otto Kekäläinen",
+      "email": "otto@seravo.com",
+      "homepage": "https://github.com/ottok"
+    },
+    {
+      "name": "Leo Toikka",
+      "email": "leo@seravo.com"
+    },
+    {
+      "name": "Simo Kemppainen",
+      "email": "simo@seravo.com"
+    }
+  ],
+  "keywords": [
+    "wordpress", "wp", "wp-palvelu", "seravo", "seravo.com"
+  ],
+  "require": {
+    "composer/installers": "^1.0"
+  }
+}
