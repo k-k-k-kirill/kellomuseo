@@ -1,0 +1,41 @@
+{#
+ # View template for the base document construction.
+ #}
+<!doctype html>
+<html class="no-js" {{ site.language_attributes }}>
+
+  {% block head %}
+		<head>
+			<meta charset="utf-8">
+			<meta http-equiv="x-ua-compatible" content="ie=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			{{ function('wp_head') }}
+		</head>
+  {% endblock %}
+
+  <body class="{{ body_class }}">
+    {% block site_body %}
+
+      {% block site_header %}
+        {% include 'site-header/site-header.twig' %}
+      {% endblock %}
+
+      <main role="main">
+        <div class="container">
+          {% block site_content %}
+            {{ __('Sorry, no content was found!', textdomain) }}
+          {% endblock %}
+        </div>
+      </main>
+
+      {% block site_footer %}
+        {% include 'site-footer/site-footer.twig' %}
+      {% endblock %}
+
+    {% endblock %}
+
+    {{ function('wp_footer') }}
+
+  </body>
+
+</html>

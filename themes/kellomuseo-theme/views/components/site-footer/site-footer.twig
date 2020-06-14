@@ -1,0 +1,15 @@
+{#
+ # Template for the site footer.
+ #}
+
+<footer class="site-footer">
+  <section class="site-footer-content container">
+    {% block contents %}
+    {% endblock %}
+  </section>
+  <section class="site-footer-credits container text-center">
+    <a href="{{ privacy }}">{{ __('Privacy policy', textdomain) }}</a>
+    {{ __('&copy; %1$s %2$s.', textdomain)|format(("now"|date('Y')), 'Company') }}
+    {{ __('Crafted by <a href="https://pixels.fi" target="_blank">Pixels</a>.', textdomain) }}
+  </section>
+</footer>

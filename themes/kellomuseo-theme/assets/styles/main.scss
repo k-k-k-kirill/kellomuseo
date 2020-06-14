@@ -1,0 +1,36 @@
+@import "common/variables";
+
+// Import npm dependencies
+@import "~bootstrap/scss/bootstrap";
+
+// *************
+// Common styles
+// *************
+@import "common/mixins/fluid-type";
+@import "common/typography";
+@import "common/global";
+@import "common/buttons";
+@import "common/tinymce";
+@import "common/wordpress";
+@import "common/cookie-notice";
+@import "common/video-embeds";
+
+// ****************
+// Component styles
+// ****************
+@import "../../views/components/comment/comment";
+@import "../../views/components/colors/colors";
+@import "../../views/components/form/form";
+@import "../../views/components/form/form-new-comment";
+@import "../../views/components/single-content/single-content";
+@import "../../views/components/site-header/site-header";
+@import "../../views/components/typography/typography";
+
+// ****************
+// Teaser styles
+// ****************
+
+// ***********
+// Layout styles
+// ***********
+@import "../../views/layouts/design-system/design-system";

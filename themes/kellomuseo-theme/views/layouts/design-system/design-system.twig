@@ -1,0 +1,55 @@
+{#
+ # Template file for the design system.
+ #
+ # @version 1.0.0
+ #}
+
+{% extends 'base/base.twig' %}
+
+{% block site_content %}
+
+<h1 class="text-allergro my-5">{{ __('Design System', textdomain) }}</h1>
+
+<div class="row">
+  <div class="col-md-4 col-lg-3">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      {% for navigation_item in navigation %}
+        <a class="nav-link {{ navigation_item.active ? 'active' }}" href="{{ navigation_item.link }}">
+          {{ navigation_item.label }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="ds__component col-md-8 col-lg-9">
+    <h2>{{ component.label }}</h2>
+
+    {% if component.description %}
+    <div class="ds__component__description mb-4">
+      {{ component.description }}
+    </div>
+    {% endif %}
+
+    {% if component.variations %}
+
+      {# Loop through variations, variations are (at the moment) organized per file. #}
+      {% for variation in component.variations %}
+        <h3 class="mb-4 h4"><code>{{ variation.filename }}</code></h3>
+
+        {% if variation.data %}
+          {% for example_data in variation.data %}
+
+            <div class="mb-4">
+              {% include [variation.filepath] with example_data %}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>{{ __('No valid data file found for <code>%s</code>. Create one to display an example of this component. If you have created a file, check that the file contains vaild JSON syntax.', textdomain)|format(variation.filename) }}</p>
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

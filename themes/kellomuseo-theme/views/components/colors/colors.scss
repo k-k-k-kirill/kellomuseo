@@ -1,0 +1,19 @@
+/*************************** COLOR SWATCHES *******************************/
+.color-item {
+  display: inline-block;
+  width: 100%;
+
+  @include media_breakpoint_up(md) {
+    width: 50%;
+  }
+
+  @include media_breakpoint_up(lg) {
+    width: 20%;
+  }
+}
+
+.color-swatch {
+  min-height: 100px;
+}
+
+/*************************** END COLOR SWATCHES *******************************/
