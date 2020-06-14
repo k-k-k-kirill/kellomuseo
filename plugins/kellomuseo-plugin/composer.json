@@ -1,0 +1,46 @@
+{
+  "name": "pixels/kellomuseo-plugin",
+  "description": "Pixels plugin",
+  "type": "wordpress-plugin",
+  "homepage": "https://github.com/pixelshelsinki/kellomuseo-plugin",
+  "authors": [
+    {
+      "name": "Sampo Silvennoinen",
+      "email": "sampo@pixels.fi",
+      "homepage": "https://github.com/stscoundrel"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/pixelshelsinki/kellomuseo-plugin/issues"
+  },
+  "require": {
+    "symfony/inflector": "^4.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.3.1",
+    "wp-coding-standards/wpcs": "^2.1.1",
+    "phpcompatibility/phpcompatibility-wp": "*",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+    "vimeo/psalm": "^3.11",
+    "giacocorsiglia/wordpress-stubs": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pixels\\Kellomuseo\\": "lib/"
+    }
+  },
+  "scripts": {
+    "test": [
+      "phpcs"
+    ],
+    "fix": [
+      "phpcbf -p -w"
+    ],
+    "psalm": [
+      "psalm"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+language: php
+sudo: false
+dist: trusty
+php:
+  - 7.4
+  - 7.3
+  - 7.2
+  - nightly
+
+env:
+  - TRAVIS_NODE_VERSION="12"
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+    - php: 7.2
+
+cache:
+  apt: true
+  directories:
+    - $HOME/.composer/cache
+    - $HOME/.yarn-cache
+    - vendor
+
+before_install:
+  - composer self-update
+
+install:
+  - composer install -o --prefer-dist --no-interaction
+
+script:
+  - composer test
