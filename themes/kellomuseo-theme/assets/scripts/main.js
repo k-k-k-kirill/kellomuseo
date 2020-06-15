@@ -9,7 +9,9 @@ const pixelsThemeApp = function() {
 
   // Page load actions.
   const init = () => {
-
+    $('.js-custom-dropdown-toggle').click(function () {
+      $(this).toggleClass('open')
+    })
   }
 
   // Scroll actions.

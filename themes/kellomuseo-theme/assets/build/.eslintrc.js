@@ -46,6 +46,7 @@ module.exports = {
     'react/prop-types': 0,
     'no-console': 0,
     'quotes': ['error', 'single'],
+    'no-descending-specificity': 0,
     'comma-dangle': [
       'error',
       {

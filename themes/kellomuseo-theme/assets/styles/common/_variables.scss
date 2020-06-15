@@ -6,12 +6,22 @@
 $color-body:       #000;
 $color-link:       #007bff;
 $color-link-hover: #000;
+$white:            #fff;
+$red:              #ef041b;
+$dark-grey:        #4a4a4a;
+
+$theme-colors: (
+  "red": $red,
+  "dark": $dark-grey,
+  "light": $white
+);
 
 /* #################################### */
 
 // Fonts
-$font-body:           "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-heading:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-body:           "Montserrat", Helvetica, Arial, sans-serif;
+$font-heading:        "Old Standard TT", Helvetica, Arial, sans-serif;
+$font-alt:            "Georgia", Helvetica, Arial, sans-serif;
 
 // Typography breakpoints
 // NOTE: These are crucial for fluid-type mixin.
@@ -168,3 +178,25 @@ $lead-font-weight:      normal;
 
 // Misc
 $spacer:                1rem;
+
+$spacers: (
+  1: $spacer,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 4,
+  6: $spacer * 5,
+  7: $spacer * 6,
+  8: $spacer * 7,
+  16: $spacer * 16,
+  32: $spacer * 32,
+);
+
+// Navbar
+$navbar-light-toggler-border-color: transparent;
+$navbar-toggler-padding-y:          0;
+$navbar-toggler-padding-x:          0;
+$navbar-padding-y:                  2rem;
+$navbar-padding-x:                  2rem;
+$navbar-light-color:                $white;
+$navbar-light-hover-color:          $red;

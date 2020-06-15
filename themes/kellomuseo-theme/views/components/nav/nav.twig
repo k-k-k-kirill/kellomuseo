@@ -8,13 +8,17 @@
  #}
 
 {% if nav_items %}
-	<ul class="nav {{ classes }}">
+	<ul class="nav custom-dropdown align-items-center {{ classes }}">
 	{% for item in nav_items %}
 		<li class="nav-item {{ item.get_children ? 'dropdown' }} {{ item.classes|join(' ') }}">
 			{% if not item.get_children %}
 				<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
 			{% else %}
-        <a class="nav-link dropdown-toggle" target="{{ item.target }}" href="{{ item.link }}" id="{{ item.slug }}-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+
+
+			<a class="nav-link dropdown-toggle d-inline-block" target="{{ item.target }}" href="{{ item.link }}"  aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+			<a href="#" class="custom-dropdown-toggle d-inline-block js-custom-dropdown-toggle" data-toggle="dropdown" id="{{ item.slug }}-dropdown">{% include 'assets/images/down-arrow.svg' %}</a>
+
 				<div class="dropdown-menu" aria-labelledby="{{ item.slug }}-dropdown">
 					{% for sub_item in item.get_children %}
 					  <a class="dropdown-item {{ sub_item.classes|join(' ') }}" target="{{ sub_item.target }}" href="{{ sub_item.link }}">{{ sub_item.title }}</a>
@@ -22,6 +26,10 @@
 				</div>
 			{% endif %}
 		</li>
+
+		{% if not loop.last %}
+			<div class="d-none d-lg-block nav-separator {{item.get_children ? 'nav-separator--extra_margin' : ''}}"></div>
+		{% endif %}
 	{% endfor %}
 	</ul>
 {% endif %}
