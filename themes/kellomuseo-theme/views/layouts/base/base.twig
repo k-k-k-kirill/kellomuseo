@@ -21,11 +21,9 @@
       {% endblock %}
 
       <main role="main">
-        <div class="container">
           {% block site_content %}
             {{ __('Sorry, no content was found!', textdomain) }}
           {% endblock %}
-        </div>
       </main>
 
       {% block site_footer %}

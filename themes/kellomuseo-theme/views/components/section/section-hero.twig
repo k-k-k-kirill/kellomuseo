@@ -1,0 +1,19 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{% endblock %}
+
+{% block section_content %}
+<div class="container-fluid section-hero__container py-8 py-lg-16" style="background-image: url({{TimberImage(section.background).src}});">
+    {% if section.background_overlay %}
+        <div class="section-hero__overlay"></div>
+    {% endif %}
+
+    <div class="row">
+        <div class="{{section.content_position == 'right' ? 'col-lg-6 offset-lg-6'}}">
+            <div class="text-white">
+                {{section.content}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
