@@ -1,12 +1,11 @@
 {% if polylang and polylang.languages|length > 1 %}
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle dropdown-toggle-language text-uppercase" href="#" id="LanguageDropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">{{ polylang.current }}</span></a>
-    <div class="dropdown-menu dropdown-menu-right dropdown-menu-language" aria-labelledby="LanguageDropdown">
+  <li class="nav-item ml-xl-4 mt-2 mt-xl-0">
       {% for language in polylang.languages %}
-        {% if language.name != polylang.current %}
-        <a class="dropdown-item {{ language.classes|join(' ') }} text-lg-right" href="{{ language.url }}">{{ language.name }}</a>
+        <a class="text-white text-uppercase {{polylang.current == language.slug ? 'text-red' : ''}}" href="{{ language.url }}">{{ language.slug }}</a>
+
+        {% if not loop.last %}
+          <span class="text-white">|</span>
         {% endif %}
       {% endfor %}
-    </div>
   </li>
 {% endif %}

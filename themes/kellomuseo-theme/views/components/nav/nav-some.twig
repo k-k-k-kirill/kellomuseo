@@ -1,0 +1,9 @@
+    <nav class="some-nav bg-dark pt-xl-2 {{mobile ? 'd-block d-xl-none mt-2' : 'd-none d-xl-block px-2'}} ">
+      <div class="container-fluid {{mobile ? 'px-0' : 'd-flex flex-row justify-content-end'}}">
+        <div class="d-inline-block {{mobile ? '' : 'ml-auto'}}">
+          {% for key, value in links %}
+            <a class="some-link" href="{{value}}">{% include 'assets/images/' ~ key ~ '.svg' %}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </nav>

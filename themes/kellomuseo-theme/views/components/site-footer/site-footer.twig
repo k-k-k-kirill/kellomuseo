@@ -2,14 +2,61 @@
  # Template for the site footer.
  #}
 
-<footer class="site-footer">
+<footer class="site-footer bg-darker py-4">
   <section class="site-footer-content container">
     {% block contents %}
+      <div class="row">
+        {% if site.contact %}
+          <div class="col-lg-6 footer-column--left pr-xl-3">
+            <div class="row mb-md-4 mb-xl-0">
+              <div class="col-md-6 d-flex flex-column justify-content-between mb-4 mb-md-0 text-center text-md-left">
+                <div>
+                  <p class="text-egg mb-1">{{site.contact.address}} <span class="vertical-text-separator">|</span> {{site.contact.city}}</p>
+                  <p class="text-egg mb-0">{{site.contact.name}} <span class="vertical-text-separator">|</span></p>
+                  <p class="text-egg mb-3">{{site.contact.venue}}</p>
+                  <p class="text-egg">{{__('Yhteydenotto', 'kellomuseo-theme')}}</p>
+                  <p class="text-egg"><a class="text-egg" href="mailto:{{site.contact.email}}">{{site.contact.email}}</a></p>
+                  <p class="text-egg mb-3">Tel. <a class="text-egg" href="tel:{{site.contact.phone}}">{{site.contact.phone}}</a></p>
+                </div>
+
+                {% include 'nav/nav-some-footer.twig' with { links: site.social } %}
+              </div>
+
+              {% if site.contact.partners %}
+                <div class="col-md-6 text-center d-flex flex-column justify-content-between mb-4 mb-md-0">
+                  <p class="text-egg">{{__('Yhteistyössä', 'kellomuseo-theme')}}</p>
+                  {% for partner in site.contact.partners %}
+                    <div>
+                      <p class="text-egg mb-0">{{partner.name}}</p>
+                      <p class="text-egg">{{partner.site}}</p>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-lg-6 pl-xl-3">
+            {% if site.contact.partner_logos %}
+              <div class="d-flex flex-row">
+                {% for item in site.contact.partner_logos %}
+                  <img class="partner-logo" src="{{TimberImage(item.logo).src}}" alt="{{TimberImage(item.logo).alt}}" />
+                {% endfor %}
+              </div>
+
+              <div>
+                <h3 class="text-center text-egg newsletter__title">{{__('Tilaa uutiskirjeemme!', 'kellomuseo-theme')}}</h3>
+
+                <div class="newsletter__form">
+                  <input type="text" class="form-control mb-1" placeholder="{{__('Nimi', 'kellomuseo-theme')}}">
+                  <input type="text" class="form-control mb-1" placeholder="{{__('S-Posti', 'kellomuseo-theme')}}" >
+                  <button class="button m-auto d-block" type="submit">{{__('Lähetä', 'kellomuseo-theme')}}</button>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
     {% endblock %}
-  </section>
-  <section class="site-footer-credits container text-center">
-    <a href="{{ privacy }}">{{ __('Privacy policy', textdomain) }}</a>
-    {{ __('&copy; %1$s %2$s.', textdomain)|format(("now"|date('Y')), 'Company') }}
-    {{ __('Crafted by <a href="https://pixels.fi" target="_blank">Pixels</a>.', textdomain) }}
   </section>
 </footer>

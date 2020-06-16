@@ -14,7 +14,8 @@
 }
 
 .custom-dropdown {
-  @include media-breakpoint-up(lg) {
+
+  @include media-breakpoint-up(xl) {
     .dropdown {
       & > .dropdown-toggle {
         /* Without this, clicking will make it sticky */
@@ -40,7 +41,7 @@
 .nav-item {
   width: 100%;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     width: auto;
   }
 
@@ -75,5 +76,64 @@
     margin-left: 16px;
   }
 }
+
+.dropdown-menu {
+  font-family: $font-heading;
+  height: auto !important;
+}
+
+.dropdown-item {
+  font-size: 1rem;
+  font-weight: bold;
+  color: $white;
+  transition: all 0.1s ease-in-out;
+
+  &:hover,
+  &:active {
+    color: $red;
+  }
+}
+
+.some-link {
+  @include media-breakpoint-up(xl) {
+    margin-left: 0.675rem;
+  }
+
+  svg {
+    height: 20px;
+    width: auto;
+    fill: $white;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &:first-child {
+    svg {
+      height: 30px;
+      width: auto;
+    }
+  }
+
+  &--footer {
+    margin: 0;
+
+    svg {
+      height: 55px;
+      width: auto;
+    }
+
+    &:first-child {
+      svg {
+        height: 80px;
+        width: auto;
+      }
+    }
+  }
+}
+
+
 
 /************************************ SITE HEADER ENDS ************************************/

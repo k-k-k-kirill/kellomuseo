@@ -1,0 +1,36 @@
+.footer-column {
+    &--left {
+        position: relative;
+        font-size: 1.125rem;
+        font-weight: 600;
+
+        &::after {
+            @include media-breakpoint-up(lg) {
+                content: "";
+                width: 2px;
+                height: 90%;
+                position: absolute;
+                top: 5%;
+                right: 0;
+                background-color: $white;
+            }
+        }
+    }
+}
+
+.partner-logo {
+    display: inline-block;
+    height: 100px;
+    width: auto;
+
+    &:nth-child(3) {
+        height: 170px;
+        width: auto;
+    }
+}
+
+.newsletter {
+    &__title {
+        font-family: $font-body;
+    }
+}

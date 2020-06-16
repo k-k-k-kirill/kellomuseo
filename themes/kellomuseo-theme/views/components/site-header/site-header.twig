@@ -3,8 +3,12 @@
  #}
 
 <header class="site-header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark {{ fn('is_admin_bar_showing') ? 'admin-bar-showing' : '' }}">
-    <div class="container">
+  {% if site.social %}
+    {% include 'nav/nav-some.twig' with { links: site.social } %}
+  {% endif %}
+
+  <nav class="navbar navbar-expand-xl navbar-light bg-dark {{ fn('is_admin_bar_showing') ? 'admin-bar-showing' : '' }} px-2 pb-1 pt-1 pb-md-2 pt-md-2 pb-xl-2 pt-xl-0">
+    <div class="container-fluid justify-content-between">
       <a class="navbar-brand" href="{{ polylang.home }}">{% include 'assets/images/site_logo.svg' %}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-header-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _x('Toggle navigation', 'Accessibility label for toggling menu', textdomain) }}">
         <span class="navbar-toggler-icon"></span>

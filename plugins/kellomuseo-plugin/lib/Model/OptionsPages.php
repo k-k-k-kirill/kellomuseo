@@ -13,7 +13,7 @@ namespace Pixels\Kellomuseo\Model;
 class OptionsPages {
 
 	/**
-	 * Options page.
+	 * Site settings page options page.
 	 *
 	 * @var Class
 	 */
@@ -34,9 +34,8 @@ class OptionsPages {
 	 * @since 1.0
 	 */
 	public function load_acf_options_pages() {
-
 		// Load options pages.
-		// $this->example = new OptionsPages\Example();.
+		$this->site_settings = new OptionsPages\SiteSettings();
 	} //end load_options_pages
 
 } //end OptionsPages

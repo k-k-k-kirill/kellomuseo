@@ -1,10 +1,18 @@
 .btn,
 button {
   display: inline-block;
+  padding: 0.675rem 3rem;
+  font-size: 0.75rem;
+  font-family: $font-body;
+  font-weight: 500;
+  color: $white;
+  border: solid $red 3px;
+  transition: all 0.1s ease-in-out;
+  background-color: transparent;
 
-  // &:hover {
-
-  // }
+  &:hover {
+    background-color: $red;
+  }
 
   // &:focus {
 

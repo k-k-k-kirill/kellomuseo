@@ -9,11 +9,16 @@ $color-link-hover: #000;
 $white:            #fff;
 $red:              #ef041b;
 $dark-grey:        #4a4a4a;
+$transparent:      transparent;
+$lighter-grey:     #d1d1d1;
+$egg-white:        #dbdbdb;
 
 $theme-colors: (
   "red": $red,
   "dark": $dark-grey,
-  "light": $white
+  "light": $white,
+  "darker": $color-link-hover,
+  "egg": $egg-white
 );
 
 /* #################################### */
@@ -184,10 +189,10 @@ $spacers: (
   2: $spacer * 2,
   3: $spacer * 3,
   4: $spacer * 4,
-  5: $spacer * 4,
-  6: $spacer * 5,
-  7: $spacer * 6,
-  8: $spacer * 7,
+  5: $spacer * 5,
+  6: $spacer * 6,
+  7: $spacer * 7,
+  8: $spacer * 8,
   16: $spacer * 16,
   32: $spacer * 32,
 );
@@ -196,7 +201,21 @@ $spacers: (
 $navbar-light-toggler-border-color: transparent;
 $navbar-toggler-padding-y:          0;
 $navbar-toggler-padding-x:          0;
-$navbar-padding-y:                  2rem;
-$navbar-padding-x:                  2rem;
 $navbar-light-color:                $white;
 $navbar-light-hover-color:          $red;
+$navbar-light-active-color:         $red;
+
+// Dropdown
+$dropdown-color:              $white;
+$dropdown-bg:                 $dark-grey;
+$dropdown-border-radius:      0;
+$dropdown-link-color:         rgba($white, 0.75);
+$dropdown-link-hover-bg:      $transparent;
+$dropdown-link-hover-color:   $white;
+$dropdown-border-width:       0;
+
+//Form
+$input-border-radius:         0;
+$input-border-width:          2px;
+$input-border-color:          $lighter-grey;
+$input-color:                 $dark-grey;

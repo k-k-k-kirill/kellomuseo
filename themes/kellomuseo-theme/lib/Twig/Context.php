@@ -63,7 +63,9 @@ class Context {
 		 */
 		$context['site']           = $this;
 		$context['site']->site_url = get_site_url(); // Since timber only returns home URL as 'link'.
-
+		$context['site']->social = get_field('social_media_links', 'option');
+		$context['site']->contact = get_field('contact_details', 'option');
+		
 		/**
 		 * Textdomain for translations
 		 */

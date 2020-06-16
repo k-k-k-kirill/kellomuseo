@@ -20,3 +20,10 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+input[type="text"] {
+  &::placeholder {
+    color: $dark-grey;
+    font-weight: 500;
+  }
+}

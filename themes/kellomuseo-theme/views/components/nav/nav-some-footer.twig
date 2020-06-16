@@ -1,0 +1,7 @@
+    <nav class="some-nav some-nav--footer">
+        <div class="d-inline-block d-flex flex-row justify-content-around justify-content-md-between align-items-center">
+          {% for key, value in links %}
+            <a class="some-link some-link--footer" href="{{value}}">{% include 'assets/images/' ~ key ~ '.svg' %}</a>
+          {% endfor %}
+        </div>
+    </nav>
