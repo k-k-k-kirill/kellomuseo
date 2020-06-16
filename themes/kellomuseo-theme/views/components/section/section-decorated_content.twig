@@ -1,0 +1,35 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{% endblock %}
+
+{% block section_content %}
+    <div class="container py-6">
+
+        {% if section.title %}
+            <h1 class="large-heading text-uppercase text-center">{{section.title}}</h1>
+        {% endif %}
+
+        {% for content_block in section.content_blocks %}
+            <div class="row">
+                <div class="col-lg-12">
+                    {% if content_block.title %}
+                        <h2 class="section-decorated_content__title text-center">{{content_block.title}}</h2>
+                    {% endif %}
+
+                    {{content_block.content}}
+                </div>
+
+                {% if loop.last == false %}
+                    <div class="col-lg-12">
+                        <div class="d-flex decorated-separator justify-content-center my-2 {{loop.index is odd ? 'flex-row' : 'flex-row-reverse'}}">
+                            <div class="decorated-separator__dash decorated-separator__dash--first"></div>
+                            <div class="decorated-separator__dash decorated-separator__dash--second"></div>
+                            <div class="decorated-separator__dash decorated-separator__dash--third"></div>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

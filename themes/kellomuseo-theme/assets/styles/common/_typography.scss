@@ -208,3 +208,10 @@ h6,
     font-weight: $h6-font-weight;
   }
 }
+
+.large-heading {
+  font-family: $font-heading;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+}
