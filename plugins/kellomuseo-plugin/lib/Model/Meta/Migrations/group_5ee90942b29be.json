@@ -421,7 +421,7 @@
                             "label": "Background overlay",
                             "name": "background_overlay",
                             "type": "true_false",
-                            "instructions": "Should this section have darker background overlay?",
+                            "instructions": "Should this section have lighter background overlay?",
                             "required": 0,
                             "conditional_logic": [
                                 [
@@ -460,6 +460,38 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_5ee922b7d51af",
+                            "label": "Background",
+                            "name": "background",
+                            "type": "image",
+                            "instructions": "Upload image that will be used as background for this section.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5ee9210623452",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_5ee9208c2344c",
                             "label": "Title",
                             "name": "title",
@@ -494,7 +526,7 @@
                             "default_value": "",
                             "tabs": "all",
                             "toolbar": "full",
-                            "media_upload": 1,
+                            "media_upload": 0,
                             "delay": 0
                         },
                         {
@@ -535,7 +567,7 @@
                             "default_value": "",
                             "tabs": "all",
                             "toolbar": "full",
-                            "media_upload": 1,
+                            "media_upload": 0,
                             "delay": 0
                         }
                     ],
@@ -567,5 +599,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592336762
+    "modified": 1592338182
 }

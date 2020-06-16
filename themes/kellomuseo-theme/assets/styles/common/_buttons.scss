@@ -20,6 +20,10 @@ button {
     padding: 0.675rem 0;
   }
 
+  &--dark {
+
+  }
+
   &--light {
     border: solid $white 3px;
 
@@ -30,25 +34,34 @@ button {
   }
 
   &--large {
-    min-width: 400px;
+    width: 100%;
     padding: 0.675rem 0;
     font-size: 1.25rem;
+
+    @include media-breakpoint-up(md) {
+      min-width: 400px;
+    }
   }
 
-  // &:focus {
+  &--primary,
+  &-primary {
+    background-color: $black;
+    border: none;
+    font-size: 1.125rem;
+    color: $white;
+    font-weight: bold;
+    padding: 2rem 0;
+    width: 100%;
 
-  // }
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
 
-  // &--primary,
-  // &-primary {
-  //   &:hover {
+    &:focus {
 
-  //   }
-
-  //   &:focus {
-
-  //   }
-  // }
+    }
+  }
 
   // &--secondary,
   // &-secondary {

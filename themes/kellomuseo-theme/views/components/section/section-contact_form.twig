@@ -1,0 +1,35 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{% endblock %}
+
+{% block section_content %}
+    <div class="container-fluid section-hero__container py-8 py-lg-16" style="background-image: url({{TimberImage(section.background).src}});">
+        {% if section.background_overlay %}
+            <div class="section-hero__overlay section-hero__overlay--light"></div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                {% if section.title %}
+                    <h1 class="text-white text-center">{{section.title}}</h1>
+                {% endif %}
+
+                <div class="text-white mb-4">
+                    {{section.content_before_form}}
+                </div>
+
+                {% if section.form %}
+                    <div class="mb-4">
+                        {% filter shortcodes %}
+                            [contact-form-7 id="{{section.form.ID}}" title="{{section.form.post_title}}"]
+                        {% endfilter %}
+                    </div>
+                {% endif %}
+
+                <div class="text-white story-form__after">
+                    {{section.content_before_form}}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
