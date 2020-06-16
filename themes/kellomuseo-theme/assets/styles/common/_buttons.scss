@@ -9,9 +9,30 @@ button {
   border: solid $red 3px;
   transition: all 0.1s ease-in-out;
   background-color: transparent;
+  border-radius: 0;
 
   &:hover {
     background-color: $red;
+  }
+
+  &--fluid {
+    width: 100%;
+    padding: 0.675rem 0;
+  }
+
+  &--light {
+    border: solid $white 3px;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  &--large {
+    min-width: 400px;
+    padding: 0.675rem 0;
+    font-size: 1.25rem;
   }
 
   // &:focus {
