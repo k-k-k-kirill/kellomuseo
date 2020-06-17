@@ -144,6 +144,57 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_5eea4866a73f8": {
+                    "key": "layout_5eea4866a73f8",
+                    "name": "exhibitions",
+                    "label": "Exhibitions",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eea487ea73f9",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "Write title for this section here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5eea488ba73fa",
+                            "label": "Exhibitions",
+                            "name": "exhibitions",
+                            "type": "post_object",
+                            "instructions": "Here you can add exhibitions to be displayed in this section",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "exhibition"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "return_format": "object",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_5ee91080a4362": {
                     "key": "layout_5ee91080a4362",
                     "name": "decorated_content",
@@ -664,5 +715,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592409231
+    "modified": 1592413077
 }

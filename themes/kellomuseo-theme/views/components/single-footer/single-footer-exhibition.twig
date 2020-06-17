@@ -1,0 +1,13 @@
+{% if site.exhibition.links %}
+    <section class="bg-doom py-8">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 d-inline-flex flex-column flex-md-row justify-content-center">
+                    {% for item in site.exhibition.links %}
+                        <a href="{{item.link.url}}" class="btn {{loop.last == false ? 'mr-md-3 mb-2 mb-md-0' : ''}}">{{item.link.title}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

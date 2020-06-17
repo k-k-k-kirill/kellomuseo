@@ -10,6 +10,7 @@ button {
   transition: all 0.1s ease-in-out;
   background-color: transparent;
   border-radius: 0;
+  min-width: 70px;
 
   &:hover {
     background-color: $red;
@@ -35,7 +36,7 @@ button {
   }
 
   &--large {
-    width: 100%;
+    min-width: 100%;
     padding: 0.675rem 0;
     font-size: 1.25rem;
 

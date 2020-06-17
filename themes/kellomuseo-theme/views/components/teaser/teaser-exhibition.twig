@@ -1,0 +1,11 @@
+{% extends 'teaser/teaser.twig' %}
+
+{% block content %}
+    <div class="exhibition-teaser__container d-flex flex-column justify-content-center align-items-center" style="background-image: url('{{TimberImage(post.thumbnail).src}}');">
+        <div class="exhibition-teaser__overlay"></div>
+        <div class="exhibition-teaser__content text-center">
+            <p>{{post.title}}</p>
+            <a href="{{post.link}}" class="btn exhibition-teaser__button mt-2">{{__('Tutustu lisää', 'kellomuseo-theme')}}</a>
+        </div>
+    </div>
+{% endblock %}

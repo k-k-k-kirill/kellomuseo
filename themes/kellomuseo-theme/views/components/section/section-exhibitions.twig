@@ -1,0 +1,20 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{% endblock %}
+
+{% block section_content %}
+    <div class="container py-8">
+        <div class="row">
+            {% if section.title %}
+                <div class="col-lg-12">
+                    <h2 class="large-heading text-center">{{section.title}}</h2>
+                </div>
+            {% endif %}
+            {% for exhibition in section.exhibitions %}
+                <div class="col-md-4 mb-3 mb-md-0">
+                    {% include 'teaser/teaser-exhibition.twig' with { post: TimberPost(exhibition) } %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
