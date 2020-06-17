@@ -36,6 +36,7 @@ class OptionsPages {
 	public function load_acf_options_pages() {
 		// Load options pages.
 		$this->site_settings = new OptionsPages\SiteSettings();
+		$this->site_settings = new OptionsPages\ExhibitionOptions();
 	} //end load_options_pages
 
 } //end OptionsPages

@@ -29,7 +29,7 @@ class Model {
 	 *
 	 * @var class
 	 */
-	private $cpt_example;
+	private $cpt_exhibition;
 
 	/**
 	 * Taxonomies
@@ -65,7 +65,7 @@ class Model {
 	public function __construct() {
 
 		// Custom post types.
-		$this->cpt_example = new Model\PostTypes\Example();
+		$this->cpt_exhibition = new Model\PostTypes\Exhibition();
 
 		// Taxonomies.
 		$this->tax_example = new Model\Taxonomies\ExampleTaxonomy();

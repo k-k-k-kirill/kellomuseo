@@ -573,6 +573,71 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5eea3ecd52a75": {
+                    "key": "layout_5eea3ecd52a75",
+                    "name": "link_boxes",
+                    "label": "Link boxes",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eea3ed752a76",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "Write title for this section here",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5eea3ee552a77",
+                            "label": "Boxes",
+                            "name": "boxes",
+                            "type": "repeater",
+                            "instructions": "Here you can add boxes with link to this section.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "Add Box",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5eea3fa952a79",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "link",
+                                    "instructions": "Provide text and URL for this link box. If URL or text is not provided, box will not be displayed.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Section",
@@ -599,5 +664,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1592338182
+    "modified": 1592409231
 }

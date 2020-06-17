@@ -1,0 +1,17 @@
+{#
+ # Template for a single content's content.
+ #
+ # @version 1.0.0
+ #
+ # @var post	The Timber Post object.
+ #}
+
+<section class="single-content single-content--{{ post.type }} py-8">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {{ post.get_paged_content }}
+            </div>
+        </div>
+    </div>
+</section>
