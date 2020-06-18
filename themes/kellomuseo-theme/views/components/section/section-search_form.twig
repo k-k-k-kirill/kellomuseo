@@ -1,0 +1,28 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{% endblock %}
+
+{% block section_content %}
+    <div class="container-fluid section-hero__container py-8 py-lg-16" style="background-image: url({{TimberImage(section.background).src}});">
+        {% if section.background_overlay %}
+            <div class="section-hero__overlay"></div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 text-center">
+                {% if section.title %}
+                    <h1 class="large-heading text-white text-center">{{section.title}}</h1>
+                {% endif %}
+
+                <div class="text-white">
+                    {{section.content}}
+                </div>
+
+                <div class="d-flex flex-row justify-content-center">
+                    {{fn('get_search_form', true)}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

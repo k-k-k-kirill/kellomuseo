@@ -1,18 +1,29 @@
 {% extends 'base/base.twig' %}
 
 {% block site_content %}
+	<div class="container py-4">
+		<div class="row">
+			<div class="col-lg-12">
+				{% include ['single-header/single-header-search.twig', 'single-header/single-header.twig'] %}
 
-	{% include ['single-header/single-header-search.twig', 'single-header/single-header.twig'] %}
+				<section class="section section--search">
+					{% if posts is not empty %}
+						{% for post in posts %}
+							{% if post.type == 'exhibition' %}
+								{% include 'teaser/teaser-exhibition.twig' %}
+							{% else %}
+								{% include 'teaser/teaser.twig' %}
+							{% endif %}
+						{% endfor %}
+					{% else %}
+						<p>{{ __('No results found', textdomain) }}</p>
+					{% endif %}
+				</section>
 
-	<section class="section section--search">
-		{% if posts is not empty %}
-			{% for post in posts %}
-				{% include 'teaser/teaser.twig' %}
-			{% endfor %}
-		{% else %}
-			<p>{{ __('No results found', textdomain) }}</p>
-		{% endif %}
-	</section>
+				{% include 'pagination/pagination.twig' with {pagination: pagination} %}
+			</div>
+		</div>
 
-	{% include 'pagination/pagination.twig' with {pagination: pagination} %}
+	</div>
+
 {% endblock %}

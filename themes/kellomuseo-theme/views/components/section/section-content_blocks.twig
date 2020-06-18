@@ -1,0 +1,27 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{% endblock %}
+
+{% block section_content %}
+    <div class="container py-4">
+        <div class="row">
+            {% if section.title %}
+                <div class="col-lg-12">
+                    <h2 class="large-heading text-center" class="mb-3">{{ section.title }}</h2>
+                </div>
+            {% endif %}
+
+            {% for content_block in section.blocks %}
+                <div class="col-lg-12 {{loop.last == false ? 'mb-4' : ''}}">
+                    {% if content_block.title %}
+                        <p class="text-center section-content_blocks__subtitle">{{content_block.title}}</p>
+                    {% endif %}
+
+                    <div>
+                        {{ content_block.content }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

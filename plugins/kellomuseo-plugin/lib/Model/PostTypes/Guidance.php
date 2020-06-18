@@ -1,6 +1,6 @@
 <?php
 /**
- * Class for Exhibition Post Type.
+ * Class for Guidance Post Type.
  *
  * @package Kellomuseo.
  */
@@ -10,10 +10,10 @@ namespace Pixels\Kellomuseo\Model\PostTypes;
 use Pixels\Kellomuseo\Model\TraitSingleton;
 
 /**
- * Register Exhibition class
+ * Register Guidance class
  * Extends AbstractPostType
  */
-class Exhibition extends AbstractPostType implements PostTypeInterface {
+class Guidance extends AbstractPostType implements PostTypeInterface {
 
 	/**
 	 * Constant do define if post labels should be translatable
@@ -31,7 +31,7 @@ class Exhibition extends AbstractPostType implements PostTypeInterface {
 	public function __construct() {
 
 		// Set up post type slug.
-		$this->set_name( 'Exhibition' );
+		$this->set_name( 'Guidance' );
 
 		// Set labels.
 		$this->prepare_labels();
@@ -39,7 +39,7 @@ class Exhibition extends AbstractPostType implements PostTypeInterface {
 		// Define args.
 		$this->set_args( $this->define_args() );
 
-		// Hook up Exhibition cpt.
+		// Hook up Guidance cpt.
 		add_action( 'init', array( $this, 'create' ) );
 	}
 
@@ -51,13 +51,13 @@ class Exhibition extends AbstractPostType implements PostTypeInterface {
 
 		if ( self::TRANSLATE_LABELS ) :
 			// If you need to translate labels.
-			$singular = __( 'Exhibition', 'kellomuseo-plugin' );
-			$plural   = __( 'Exhibitions', 'kellomuseo-plugin' );
+			$singular = __( 'Guidance', 'kellomuseo-plugin' );
+			$plural   = __( 'Guidances', 'kellomuseo-plugin' );
 
 			$this->set_manual_labels( $singular, $plural );
 		else :
 			// Automatically generate labels from one word.
-			$this->set_automatic_labels( 'Exhibition' );
+			$this->set_automatic_labels( 'Guidance' );
 		endif;
 
 	}
@@ -84,12 +84,11 @@ class Exhibition extends AbstractPostType implements PostTypeInterface {
 			'show_in_menu'       => true,
 			'show_in_nav_menus'  => true,
 			'query_var'          => true,
-			'exclude_from_search' => false,
 			'capability_type'    => 'post',
-			'has_archive'        => true,
+			'has_archive'        => false,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-            'supports'           => array( 'title', 'editor', 'thumbnail' ),
+            'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
             'menu_icon'          => 'dashicons-clock' 
 		);
 
@@ -105,22 +104,22 @@ class Exhibition extends AbstractPostType implements PostTypeInterface {
 	public function define_labels() {
 
 		$labels = array(
-			'name'               => _x( 'Exhibitions', 'post type general name', 'kellomuseo-plugin' ),
-			'singular_name'      => _x( 'Exhibition', 'post type singular name', 'kellomuseo-plugin' ),
-			'menu_name'          => _x( 'Exhibitions', 'admin menu', 'kellomuseo-plugin' ),
-			'name_admin_bar'     => _x( 'Exhibition', 'add new on admin bar', 'kellomuseo-plugin' ),
+			'name'               => _x( 'Guidances', 'post type general name', 'kellomuseo-plugin' ),
+			'singular_name'      => _x( 'Guidance', 'post type singular name', 'kellomuseo-plugin' ),
+			'menu_name'          => _x( 'Guidances', 'admin menu', 'kellomuseo-plugin' ),
+			'name_admin_bar'     => _x( 'Guidance', 'add new on admin bar', 'kellomuseo-plugin' ),
 			'add_new'            => _x( 'Add New', 'add new item', 'kellomuseo-plugin' ),
-			'add_new_item'       => __( 'Add New Exhibition', 'kellomuseo-plugin' ),
-			'new_item'           => __( 'New Exhibition', 'kellomuseo-plugin' ),
-			'edit_item'          => __( 'Edit Exhibition', 'kellomuseo-plugin' ),
-			'view_item'          => __( 'View Exhibition', 'kellomuseo-plugin' ),
-			'all_items'          => __( 'All Exhibitions', 'kellomuseo-plugin' ),
-			'search_items'       => __( 'Search Exhibitions', 'kellomuseo-plugin' ),
-			'parent_item_colon'  => __( 'Parent Exhibitions:', 'kellomuseo-plugin' ),
-			'not_found'          => __( 'No Exhibitions found.', 'kellomuseo-plugin' ),
-			'not_found_in_trash' => __( 'No Exhibitions found in Trash.', 'kellomuseo-plugin' ),
+			'add_new_item'       => __( 'Add New Guidance', 'kellomuseo-plugin' ),
+			'new_item'           => __( 'New Guidance', 'kellomuseo-plugin' ),
+			'edit_item'          => __( 'Edit Guidance', 'kellomuseo-plugin' ),
+			'view_item'          => __( 'View Guidance', 'kellomuseo-plugin' ),
+			'all_items'          => __( 'All Guidances', 'kellomuseo-plugin' ),
+			'search_items'       => __( 'Search Guidances', 'kellomuseo-plugin' ),
+			'parent_item_colon'  => __( 'Parent Guidances:', 'kellomuseo-plugin' ),
+			'not_found'          => __( 'No Guidances found.', 'kellomuseo-plugin' ),
+			'not_found_in_trash' => __( 'No Guidances found in Trash.', 'kellomuseo-plugin' ),
 		);
 
 		return $labels;
 	}
-} //end Exhibition
+} //end Guidance

@@ -1,0 +1,15 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}bg-doom py-8{% endblock %}
+
+{% block section_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 d-inline-flex flex-column flex-md-row justify-content-center">
+                {% for button in section.buttons %}
+                    <a href="{{button.link.url}}" class="btn {{loop.last == false ? 'mr-md-3 mb-2 mb-md-0' : ''}}">{{button.link.title}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

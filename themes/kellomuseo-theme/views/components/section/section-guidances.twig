@@ -1,0 +1,21 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{{ section.background_color == 'black' ? 'bg-doom' : '' }}{% endblock %}
+
+{% block section_content %}
+    <div class="container py-4">
+        {% if section.title %}
+            <h3 class="text-uppercase section-guidances__title text-center mb-3 {{ section.background_color == 'black' ? 'text-white' : '' }}">{{section.title}}</h3>
+        {% endif %}
+
+        {% if section.content %}
+            <div class="mb-4 {{ section.background_color == 'black' ? 'text-white' : '' }}">
+                {{section.content}}
+            </div>
+        {% endif %}
+
+        {% for guidance in section.guidances %}
+            {% include 'teaser/teaser-guidance.twig' with { post: TimberPost(guidance), light: section.background_color == 'black' } %}
+        {% endfor %}
+    </div>
+{% endblock %}

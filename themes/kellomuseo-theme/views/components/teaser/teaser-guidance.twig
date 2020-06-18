@@ -1,0 +1,21 @@
+{% extends 'teaser/teaser.twig' %}
+
+{% block content %}
+    <div class="guidance-teaser row d-flex flex-row align-items-end mb-2">
+        {% if post.thumbnail %}
+            <div class="col-lg-4 mb-2 mb-lg-0">
+                <img class="img-fluid" src="{{TimberImage(post.thumbnail).src}}" />
+            </div>
+        {% endif %}
+
+        <div class="col-lg-8">
+            <div class="guidance-teaser__content">
+                <a class="h4 {{ light ? 'text-white' : '' }}" href="{{post.link}}">{{post.title}}</a>
+                <div class="{{ light ? 'text-white' : '' }}">
+                    {{post.preview.read_more('')}}
+                </div>
+                <p class="{{ light ? 'text-white' : '' }} mb-0 mt-3">{{post.duration}}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

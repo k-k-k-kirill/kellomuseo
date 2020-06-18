@@ -3,16 +3,24 @@
 {% block section_classes %}{% endblock %}
 
 {% block section_content %}
-    <div class="container-fluid section-hero__container py-8 py-lg-16" style="background-image: url({{TimberImage(section.background).src}});">
+    <div class="container-fluid section-hero__container py-8 py-lg-16 {{section.background_type == 'black' ? 'bg-doom py-8' : 'py-8 py-lg-16'}}" style="background-image: url({{TimberImage(section.background).src}});">
         {% if section.background_overlay %}
             <div class="section-hero__overlay"></div>
         {% endif %}
 
         <div class="row">
-            <div class="{{section.content_position == 'right' ? 'col-lg-6 offset-lg-6'}}">
-                <div class="text-white">
+            <div class="{{section.content_position == 'right' ? 'col-lg-6 offset-lg-6' : 'col-lg-8 offset-lg-2'}}">
+                <div class="text-white section-hero__content">
                     {{section.content}}
                 </div>
+
+                {% if section.links %}
+                    <div class="d-flex flex-row {{section.content_position == 'right' ? '' : 'justify-content-center' }} mt-3">
+                        {% for item in section.links %}
+                            <a href="{{item.link.url}}" class="btn {{loop.last == false ? 'mr-2' : ''}}">{{item.link.title}}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

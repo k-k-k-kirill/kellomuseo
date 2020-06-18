@@ -3,7 +3,7 @@
 {% block section_classes %}{% endblock %}
 
 {% block section_content %}
-    <div class="container-fluid section-hero__container py-8 py-lg-16" style="background-image: url({{TimberImage(section.background).src}});">
+    <div class="container-fluid section-hero__container py-8 {{section.background_type == 'image' ? 'py-lg-16' : 'bg-doom'}}" style="background-image: url({{TimberImage(section.background).src}});">
         {% if section.background_overlay %}
             <div class="section-hero__overlay section-hero__overlay--light"></div>
         {% endif %}
@@ -19,7 +19,7 @@
                 </div>
 
                 {% if section.form %}
-                    <div class="mb-4">
+                    <div class="mb-4 text-center">
                         {% filter shortcodes %}
                             [contact-form-7 id="{{section.form.ID}}" title="{{section.form.post_title}}"]
                         {% endfilter %}

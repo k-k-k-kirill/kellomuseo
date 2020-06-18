@@ -30,6 +30,8 @@ class Model {
 	 * @var class
 	 */
 	private $cpt_exhibition;
+	private $cpt_guidance;
+	private $cpt_workshop;
 
 	/**
 	 * Taxonomies
@@ -66,6 +68,8 @@ class Model {
 
 		// Custom post types.
 		$this->cpt_exhibition = new Model\PostTypes\Exhibition();
+		$this->cpt_guidance = new Model\PostTypes\Guidance();
+		$this->cpt_workshop = new Model\PostTypes\Workshop();
 
 		// Taxonomies.
 		$this->tax_example = new Model\Taxonomies\ExampleTaxonomy();

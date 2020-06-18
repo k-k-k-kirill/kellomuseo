@@ -1,0 +1,21 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{{ section.background_color == 'black' ? 'bg-doom' : '' }}{% endblock %}
+
+{% block section_content %}
+    <div class="container py-4">
+        <div class="row">
+            {% if section.title %}
+                <div class="col-lg-12">
+                    <h2 class="{{ section.background_color == 'black' ? 'text-white' : '' }} mb-3 text-center">{{ section.title }}</h2>
+                </div>
+            {% endif %}
+
+            {% for workshop in section.workshops %}
+                <div class="col-lg-4 mb-3 mb-lg-0">
+                    {% include 'teaser/teaser-workshop.twig' with { post: TimberPost(workshop), light: section.background_color == 'black' } %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'teaser/teaser.twig' %}
+
+{% block content %}
+        <div class="workshop-teaser d-flex flex-column">
+            <img class="img-fluid mb-2" src="{{TimberImage(post.thumbnail).src}}" alt="{{TimberImage(post.thumbnail).alt}}">
+            <div class="workshop-teaser__content {{ light ? 'workshop-teaser__content--light' : '' }} flex-grow-1 p-2 text-center d-flex flex-column justify-content-between">
+                <div class="workshop-teaser__text">
+                    <h6 class="{{ light ? 'text-white' : '' }} mb-4">{{ post.title }}</h6>
+                    <div class="text-center {{ light ? 'text-white' : '' }}">
+                        {{post.content}}
+                    </div>
+                </div>
+                <a class="btn mt-2 workshop-teaser__button {{ light ? 'workshop-teaser__button--light' : '' }}">{{__('Tutustuu lisää', 'kellomuseo-theme')}}</a>
+            </div>
+        </div>
+{% endblock %}

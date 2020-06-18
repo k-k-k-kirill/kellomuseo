@@ -1,0 +1,11 @@
+{% extends 'section/section.twig' %}
+
+{% block section_classes %}{{ section.background_color == 'black' ? 'bg-doom' : '' }}{{ section.background_color == 'red' ? 'bg-red' : '' }}{% endblock %}
+
+{% block section_content %}
+    <div class="container py-4">
+        <div class="{{ section.background_color == 'black' ? 'text-white' : '' }}{{ section.background_color == 'red' ? 'text-white' : '' }}">
+            {{section.content}}
+        </div>
+    </div>
+{% endblock %}
